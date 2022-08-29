@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+
+#labyrinthe-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.case {
+    background-color: purple;
+    border: solid black 1px;
+}

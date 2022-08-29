@@ -1,4 +1,4 @@
-let labyrinthe = {
+var labyrinthes = {
     "3": {
         "ex-0": [
             {
