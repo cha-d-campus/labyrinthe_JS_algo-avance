@@ -1,20 +1,36 @@
-* {
-    box-sizing: border-box;
-}
-
 h1 {
     margin-bottom: 150px;
     text-align: center;
 }
 
-
-#labyrinthe-container {
-    display: flex;
-    flex-wrap: wrap;
+#legend {
+    /* display: flex;
+    flex-wrap: none; */
     margin: auto;
 }
 
-.case {
+.startCaseColor{
+    width: 35px;
+    height: 35px;
     background-color: purple;
-    border: solid black 1px;
+}
+
+.endCaseColor{
+    width: 35px;
+    height: 35px;
+    background-color: purple;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: black;
+    border: solid 8px red;
+}
+
+.case {
+    box-sizing: border-box;
+    background-color: black;
+    background-image: none;
 }
