@@ -3,17 +3,11 @@ function createCell(dataCell) {
     const cell = document.createElement("div");
     let id = getId(dataCell["posX"], dataCell["posY"]);
     cell.setAttribute('id', id);
-    if (dataCell["entrance"]) {
-        cell.setAttribute('class', "start");
-    } else if (dataCell["exit"]){
-        cell.setAttribute('class', "end");
-    } else {
-        cell.setAttribute('class', "case");
-    };
+    cell.setAttribute('class', "case");
     cell.style.width = "25px";
     cell.style.height = "25px";
     cell.style.borderWidth = createBorder(dataCell["walls"]);
-    cell.style.borderColor = "purple";
+    cell.style.borderColor = "blueviolet";
     cell.style.borderStyle = "solid";
     cell.style.backgroundColor = createStartEnd(dataCell["entrance"], dataCell["exit"])
     return cell;
@@ -49,7 +43,7 @@ function createBorder(walls) {
 function createStartEnd(start, end) {
     let colorBackground = "";
     if (start) {
-        colorBackground = "orange";
+        colorBackground = "turquoise";
     }
     if (end) {
         colorBackground = "chartreuse";
@@ -92,10 +86,10 @@ function getId(x, y) {
 };
 
 // Variable donnant la taille en case du labyrinthe 
-let size_lab = 6;
+let size_lab = 15;
 
 // Variable donnant le numéro d'exemple de labyrinthe choisi
-let ex_lab = 0;
+let ex_lab = 1;
 
 // Variable récupérant les labyrinthes
 const lab = labyrinthes[size_lab.toString()]['ex-' + ex_lab.toString()];
