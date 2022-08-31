@@ -10,32 +10,13 @@ function createCell(dataCell) {
     cell.style.borderColor = "blueviolet";
     cell.style.borderStyle = "solid";
     cell.style.backgroundColor = createStartEnd(dataCell["entrance"], dataCell["exit"])
+    cell.visited = false;
     return cell;
 };
 
 // Création des murs du labyrinthe
 function createBorder(walls) {
-    let borders = "";
-    if (walls[0]) {
-        borders += "1px "
-    } else {
-        borders += "0px "
-    }
-    if (walls[1]) {
-        borders += "1px "
-    } else {
-        borders += "0px "
-    }
-    if (walls[2]) {
-        borders += "1px "
-    } else {
-        borders += "0px "
-    }
-    if (walls[3]) {
-        borders += "1px"
-    } else {
-        borders += "0px"
-    }
+    let borders = walls.map(el => el ? "1px" : "0px").join(" ");
     return borders;
 };
 
@@ -51,26 +32,59 @@ function createStartEnd(start, end) {
     return colorBackground;
 };
 
+
+
 // Création du labyrinthe
 function createLabyrinthe(data) {
     let size = sizeContainer(lab);
     const container = document.getElementById("container");
     container.style.width = size + 'px';
     container.style.height = size + 'px';
-    for (const cellData of data) {
-        const cell = createCell(cellData);
+    data.forEach(cellData => {
+        let cell = createCell(cellData);
         container.appendChild(cell);
-    }
+    });
+    
 };
 
+function getCell(x, y){
+    let neighbor = 
+    return neighbor;
+}
+
+function getNeighbors(cell) {
+    let neighbors = []; 
+    if (cell.walls[0] )
+}
+
+// Création du Stack
+function Stack() {
+    this.push = (el) => { console.log("pushing" + el) };
+    this.isEmpty = () => true;
+    this.pop = () => { console.log("poping") }
+}
+
 // Création de la fonction de jeu pour trouver le chemin de la case de départ à la case de sortie du labyrinthe
-// function resolveLabyrinthe(dataCell) {
-//     let id = getId(dataCell["posX"], dataCell["posY"]);
-//     let idEntrance = 
-//     if (dataCell["entrance"]) {
-//         while ()
-// }
-// };
+function resolveLab(lab, start) {
+    let waitingList = new Stack();
+    waitingList.push(start);
+    while (!waitingList.isEmpty()) {
+        let currentCell = waitingList.pop();
+        if (!currentCell.visited) {
+            currentCell.visited === true;
+            if (currentCell.isExit) {
+                return labPath(start, currentCell);
+            }
+            lab.getNeighbors(currentCell).forEach(neighborCell => {
+                if (!neighborCell.visited) {
+                    neighborCell.parentOf(currentCell);
+                    neighborCell.pop();
+                }
+            });
+        }
+    }
+    return undefined;
+};
 
 // Création du bloc qui contient le labyrinthe
 function sizeContainer(arr) {
@@ -86,7 +100,7 @@ function getId(x, y) {
 };
 
 // Variable donnant la taille en case du labyrinthe 
-let size_lab = 15;
+let size_lab = 12;
 
 // Variable donnant le numéro d'exemple de labyrinthe choisi
 let ex_lab = 1;
@@ -96,4 +110,4 @@ const lab = labyrinthes[size_lab.toString()]['ex-' + ex_lab.toString()];
 
 // Appel de la function qui créée le labyrinthe
 createLabyrinthe(lab)
-
+resolveLab(lab);
