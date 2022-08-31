@@ -1,36 +1,30 @@
-h1 {
-    margin-bottom: 150px;
-    text-align: center;
+body {
+    background-color: black;
 }
 
-#legend {
-    /* display: flex;
-    flex-wrap: none; */
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: blueviolet;
+}
+
+#allContentainer {
+    height: 625px;
+    display: flex;
     margin: auto;
 }
 
-.startCaseColor{
-    width: 35px;
-    height: 35px;
-    background-color: purple;
-}
-
-.endCaseColor{
-    width: 35px;
-    height: 35px;
-    background-color: purple;
-}
 
 #container {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     background-color: black;
-    border: solid 8px red;
+    border: solid 4px blueviolet;
 }
 
 .case {
     box-sizing: border-box;
     background-color: black;
-    background-image: none;
 }
