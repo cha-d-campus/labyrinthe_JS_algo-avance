@@ -9,6 +9,15 @@ h1 {
     color: blueviolet;
 }
 
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: blueviolet;
+}
+
+form {
+    margin: auto;
+}
+
 #allContentainer {
     height: 625px;
     display: flex;
@@ -16,15 +25,94 @@ h1 {
 }
 
 
-#container {
+#containerDFS {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     background-color: black;
     border: solid 4px blueviolet;
+    /* border: solid 4px blue; */
 }
 
-.case {
+#containerBFS {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: black;
+    border: solid 4px blueviolet;
+    /* border: solid 4px blue; */
+}
+
+#containerDFS >.case {
+    margin: auto;
+    display: flex;
     box-sizing: border-box;
     background-color: black;
+    width: 25px;
+    height: 25px;
+    border-color: blueviolet;
+    /* border-color: blue; */
+    border-style: solid;
 }
+
+#containerBFS >.case {
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    border-color: blueviolet;
+    /* border-color: blue; */
+    border-style: solid;
+}
+
+i {
+    color: purple;
+}
+
+.fa {
+    font: normal normal normal 8px/1 FontAwesome;
+}
+
+ .start{
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    background-color: turquoise;
+    border-radius: 50px;
+}
+
+/*.end{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    background-color: chartreuse;
+    border-radius: 50px;
+} */
+
+/* .start {
+    background: turquoise;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin: auto;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  } */
+
+  .visited{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    background-color: grey;
+    border-radius: 50px;
+}
+
+.end {
+    background: chartreuse;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin: auto;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
